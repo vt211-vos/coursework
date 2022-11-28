@@ -1,0 +1,21 @@
+*{
+    box-sizing: border-box;
+}
+.box{
+    margin: 5px 0;
+    border-radius: 20px;
+    width: 1000px;
+    display: flex;
+    background: #fff;
+    justify-content: space-between;
+    align-items: center;
+}
+.img{
+    background-color: #756e6e;
+    width: 15%;
+    height: 80px;
+    border-radius: 20px 0 0 20px;
+}
+.item{
+    padding: 0 40px ;
+}

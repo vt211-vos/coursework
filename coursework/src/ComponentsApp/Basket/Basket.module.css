@@ -1,0 +1,24 @@
+.box{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.boxBuy{
+    display: flex;
+    justify-content: center;
+}
+.buy{
+    font-size: 15px;
+    color: #FB8F1D;
+    border: 1px solid #FB8F1D;
+    border-radius: 8px;
+    padding: 10px 50px;
+}
+.title{
+    text-align: center;
+    padding: 10px 0;
+    font-size: 30px;
+}
+.empty{
+    color: #B8BECD;
+}

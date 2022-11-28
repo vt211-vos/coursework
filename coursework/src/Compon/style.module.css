@@ -1,0 +1,9 @@
+.img{
+    width: 100px;
+}
+.wrong{
+    border: 3px solid red;
+}
+.correct{
+    border: 3px solid green;
+}
