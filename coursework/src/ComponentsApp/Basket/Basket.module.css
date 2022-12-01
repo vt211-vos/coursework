@@ -1,13 +1,9 @@
-.box{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+.mainBox{
+    padding: 0 150px;
 }
-.boxBuy{
-    display: flex;
-    justify-content: center;
-}
+
 .buy{
+
     font-size: 15px;
     color: #FB8F1D;
     border: 1px solid #FB8F1D;
@@ -21,4 +17,13 @@
 }
 .empty{
     color: #B8BECD;
+    display: block;
+}
+.boxBuy{
+    display: flex;
+    justify-content: right;
+}
+.boxEmpty{
+    display: flex;
+    justify-content: center;
 }

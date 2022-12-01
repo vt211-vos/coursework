@@ -51,7 +51,8 @@ function Header(props){
                             :
                             <>
                                 <Link to='/login' className={s.login}>Login</Link>
-                                <Link to="/register" className={s.register}>Register</Link>
+                                <Link to="/register" className={s.register}>Sing-up
+                                </Link>
                             </>
                         }
                     </div>

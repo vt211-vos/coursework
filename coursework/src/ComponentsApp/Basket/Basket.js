@@ -11,7 +11,7 @@ function Basket(props){
             navigate("/login")
     }
     return(
-        <div>
+        <div className={s.mainBox}>
             <div className={s.title}>
                 Basket
             </div>
@@ -22,10 +22,12 @@ function Basket(props){
                         brand={item.brand}
                         model={item.model}
                         price={item.price}
+                        id={item.id}
+                        setBasket={props.setBasket}
                     />
                 )}
             </div>
-            <div className={s.boxBuy}>
+            <div className={props.basket.length > 0 ? s.boxBuy : s.boxEmpty}>
                 <div>
                     {
                         props.basket.length > 0

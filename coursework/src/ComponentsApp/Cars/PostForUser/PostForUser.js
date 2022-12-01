@@ -57,10 +57,16 @@ function PostForUser(props){
         setHoverValue(undefined)
     }
     function AddToBasket() {
+        let id = 0
+        console.log(props.basket.length)
+        if(props.basket.length > 0){
+            id = props.basket[props.basket.length-1].id + 1
+        }
         props.setBasket(prev=>prev.concat({
             brand: props.brand,
             model: props.model,
-            price: props.price
+            price: props.price,
+            id: id
         }))
     }
     
@@ -72,10 +78,9 @@ function PostForUser(props){
             <div className={s.item}>{props.model}</div>
             <div className={s.item}>{props.price}$</div>
             <div className={s.btns}>
-                <button className={s.delete} onClick={AddToBasket}>Buy</button>
+                <button className={s.buy} onClick={AddToBasket}>Buy</button>
             </div>
             <div style={styles.container}>
-                rating
                 <div style={styles.star}>
                     {stars.map((_, index) => {
                         return (

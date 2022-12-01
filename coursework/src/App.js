@@ -39,7 +39,7 @@ function App(props) {
       <>
           <div className={s.box}>
               <Header user = {user} setUser={setUser}/>
-                <div className={s.content}>
+                 <div className={s.content}>
                     <Routes>
                         <Route  path='/' element={<AboutUs/>}/>
                         <Route  path='/login' element={<Login setUser={setUser}/>}/>
@@ -49,6 +49,7 @@ function App(props) {
                         <Route  path='/cars' element={
                             <Cars
                             user={user}
+                            basket={basket}
                             setBasket={setBasket}
                         />}/>
                         <Route  path='car/:id/edit' element={<FormUpdate/>}/>
@@ -58,7 +59,7 @@ function App(props) {
                             user={user}
                         />}/>
                     </Routes>
-                </div>
+                 </div>
               <Footer/>
           </div>
 

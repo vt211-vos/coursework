@@ -2,3 +2,22 @@
     display: flex;
     flex-wrap: wrap;
 }
+.filter {
+    text-align: center;
+}
+.boxSel{
+    display: flex;
+    justify-content: center;
+}
+.sel{
+    min-width: 500px;
+}
+.search{
+    font-size: 15px;
+    color: #fff;
+    border: 1px solid #FB8F1D;
+    background: #FB8F1D;
+    border-radius: 8px;
+    padding: 5px 20px;
+    margin: 0 4px;
+}
