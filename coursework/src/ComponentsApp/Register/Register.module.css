@@ -2,24 +2,34 @@
     box-sizing: border-box;
 }
 .mainBox{
-    padding: 30px 0;
-    background: #D9D9D9;
+    /*padding: 30px 0;*/
+    /*background: #D9D9D9;*/
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    /*height: 100%;*/
     display: flex;
-    align-items: center;
+    margin: 20px 0;
     justify-content: center;
-    height: 100%;
 }
 .box{
+    position: relative;
     background: #fff;
-    padding: 90px 150px 150px 150px;
+    padding: 90px 100px 100px 100px;
     border-radius: 10px;
     box-shadow: #FF7F00 5px 5px 5px;
 }
+.close{
+    color: black;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
 .title{
-    margin-bottom: 90px;
+    margin-bottom: 60px;
     font-style: normal;
     font-weight: 600;
-    font-size: 78px;
+    font-size: 70px;
     color: #FF7F00;
 }
 

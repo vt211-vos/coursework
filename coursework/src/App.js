@@ -11,6 +11,8 @@ import FormCreate from "./ComponentsApp/CRUD/FormCreate/FormCreate";
 import Cars from "./ComponentsApp/Cars/Cars";
 import FormUpdate from "./ComponentsApp/CRUD/FormUpdate/FormUpdate";
 import Basket from "./ComponentsApp/Basket/Basket";
+import ProductPage from "./ComponentsApp/productPage/productPage";
+import Test from "./ComponentsApp/test/test";
 
 
 function App(props) {
@@ -41,23 +43,34 @@ function App(props) {
               <Header user = {user} setUser={setUser}/>
                  <div className={s.content}>
                     <Routes>
-                        <Route  path='/' element={<AboutUs/>}/>
+                        <Route  path='/' element={<Cars
+                            user={user}
+                            basket={basket}
+                            setBasket={setBasket}
+                            setUser={setUser}
+
+                        />}/>
                         <Route  path='/login' element={<Login setUser={setUser}/>}/>
-                        <Route  path='/register' element={<Register setUser={setUser}/>}/>
-                        <Route  path='/cabinet' element={<Cabinet/>}/>
-                        <Route  path='/crud' element={<FormCreate/>}/>
+                        {/*<Route  path='/aboutUs' element={<AboutUs/>}/>*/}
+                        {/*<Route  path='/register' element={<Register setUser={setUser}/>}/>*/}
+                        {/*<Route  path='/cabinet' element={<Cabinet/>}/>*/}
+                        {/*<Route  path='/crud' element={<FormCreate/>}/>*/}
                         <Route  path='/cars' element={
                             <Cars
                             user={user}
                             basket={basket}
                             setBasket={setBasket}
-                        />}/>
-                        <Route  path='car/:id/edit' element={<FormUpdate/>}/>
+                            setUser={setUser}
+                            />}/>
+                        {/*<Route  path='car/:id/edit' element={<FormUpdate/>}/>*/}
                         <Route path='/basket' element={<Basket
                             basket={basket}
                             setBasket={setBasket}
                             user={user}
+                            setUser={setUser}
                         />}/>
+                        <Route path='/productPage/:id' element={<ProductPage/>}/>
+                        <Route path='/test' element={<Test/>}/>
                     </Routes>
                  </div>
               <Footer/>

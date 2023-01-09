@@ -3,17 +3,22 @@
 }
 .mainBox{
     padding: 30px 0;
-    background: #D9D9D9;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
 }
 .box{
+    position: relative;
     background: #fff;
     padding: 50px 100px 100px 100px;
     border-radius: 10px;
     box-shadow: #FF7F00 5px 5px 5px;
+}
+.close{
+    position: absolute;
+    right: 20px;
+    top: 20px;
 }
 .title{
     margin-bottom: 90px;
@@ -52,5 +57,20 @@
     color: #fff;
 }
 
+.customFileUpload {
+    border: 1px solid #ccc;
+    display: flex;
+    padding: 6px 12px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
 
+}
+
+.customFileUpload input[type="file"]{
+    display: none;
+}
+.customFileUpload img{
+    height: 30px;
+}
 

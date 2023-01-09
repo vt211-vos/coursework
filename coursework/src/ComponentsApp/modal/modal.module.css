@@ -1,0 +1,30 @@
+.modal{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 8;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+.modal.open{
+    height: 100%;
+    display: block;
+}
+
+.modal.close{
+
+    height: 0;
+    display: none;
+}
+.modal_close{
+    float: right;
+}
+.model_body{
+    /*margin: auto;*/
+
+    /*margin-top: 5%;*/
+    /*padding: 20px;*/
+    /*border-radius: 10px;*/
+
+}

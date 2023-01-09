@@ -1,6 +1,7 @@
 .box{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 .filter {
     text-align: center;
@@ -10,7 +11,7 @@
     justify-content: center;
 }
 .sel{
-    min-width: 500px;
+    min-width: 400px;
 }
 .search{
     font-size: 15px;

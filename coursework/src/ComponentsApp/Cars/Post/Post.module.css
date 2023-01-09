@@ -5,22 +5,68 @@
     margin: 10px;
     border-radius: 10px;
     width: 220px;
-    height: 300px;
+    padding-bottom: 20px;
     background: #fff;
     box-shadow: #FF7F00 5px 5px 1px;
     text-align: center;
 }
+.iimg{
+    width: 220px;
+    border-radius: 10px 10px 0px 0;
+}
+.update{
+    width: 100px;
+    font-size: 15px;
+    color: #FB8F1D;
+    border: 1px solid #FB8F1D;
+    border-radius: 8px;
+    padding: 5px 20px;
+    margin: 0 4px;
+}
+.buy{
+    width: 100px;
+    font-size: 15px;
+    color: #fff;
+    border: 1px solid #FB8F1D;
+    background: #FB8F1D;
+    border-radius: 8px;
+    padding: 5px 20px;
+    margin: 0 4px;
+    margin-bottom: 10px;
+    transition-duration: 500ms;
+}
+.buy:hover{
+    color: #FB8F1D;
+    border: 1px solid #FB8F1D;
+    background: #fff;
+    border-radius: 8px;
+    padding: 5px 20px;
+    margin: 0 4px;
+    margin-bottom: 10px;
+
+}
 .img{
     border-radius: 10px 10px 0px 0;
-    height: 40%;
-    background-color: #756e6e;
+    width: 220px;
+    height: 140px;
+    display: flex;
+    align-items: center;
+
+
 }
 .item{
     padding: 5px 0;
 }
 
+.loadingImg{
+    border-radius: 10px 10px 0px 0;
+    width: 220px;
+    height: 100px;
+}
 .btns{
     padding-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .update{
@@ -39,4 +85,9 @@
     border-radius: 8px;
     padding: 5px 20px;
     margin: 0 4px;
+}
+.feedback{
+    color: #B8BECD;
+    font-size: 10px;
+    padding: 10px;
 }

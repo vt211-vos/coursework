@@ -13,18 +13,38 @@ function PostForUser(props){
     const [currentValue, setCurrentValue] = useState();
     const [hoverValue, setHoverValue] = useState(undefined);
     const stars = Array(5).fill(0)
+    const [feedback, setFeedback] = useState(0);
+
+    const [img, setImg] =useState()
+
 
     useEffect(getStars, [])
     function getStars(){
         axios.post("http://api/car/rating", props.id).then(function (response) {
             if(Object.keys(response.data).length !== 0){
+                setFeedback({
+                    responses: response.data.response,
+                    stars: Math.round(response.data.avgStar*10)/10
+                })
+
                 setCurrentValue(Math.round(response.data.avgStar))
+
             }
-            else
+            else {
+                setFeedback({
+                    responses: 0,
+                    stars: 0
+                })
                 setCurrentValue(0)
+            }
+
+        })
+        axios.post('http://api/car/img', props.id).then(function (response){
+            setImg(response.data.img)
         })
     }
     const handleClick = value => {
+
         if(props.user.check) {
             const RInfo = {
                 id_user: props.user.id,
@@ -32,7 +52,6 @@ function PostForUser(props){
                 stars: value
             }
             axios.post("http://api/car/userRating", RInfo).then(function (response) {
-                console.log(response.data)
                 if (response.data == null || !response.data) {
                     axios.post("http://api/car/createRating", RInfo).then(function (response) {
                         console.log(response.data)
@@ -40,7 +59,6 @@ function PostForUser(props){
                     })
                 } else {
                     axios.post("http://api/car/updateRating", RInfo).then(function (response) {
-                        console.log(response.data)
                         getStars()
                     })
                 }
@@ -72,8 +90,13 @@ function PostForUser(props){
     
     return(
         <div className={s.post}>
-            <div className={s.img}>
-            </div>
+            {
+                img != null
+                    ?
+                    <img className={s.iimg} src={img}/>
+                    :
+                    <div className={s.img}></div>
+            }
             <div className={s.item}>{props.brand}</div>
             <div className={s.item}>{props.model}</div>
             <div className={s.item}>{props.price}$</div>
@@ -97,6 +120,11 @@ function PostForUser(props){
                         )
                     })}
                 </div>
+                <div className={s.feedback}>
+                    <div>Кільсіть відгуків:{feedback.responses}</div>
+                    <div>Середня оцнка:{feedback.stars}</div>
+                </div>
+
             </div>
         </div>
     )

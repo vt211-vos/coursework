@@ -27,3 +27,9 @@
     display: flex;
     justify-content: center;
 }
+.TotalPrice{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-size: 20px;
+}

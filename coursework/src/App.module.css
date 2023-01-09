@@ -10,3 +10,9 @@
     padding: 10px 100px;
     background-color: #D9D9D9;
 }
+
+@media screen and (max-width:950px) {
+    .content{
+        padding: 10px 20px;
+    }
+}

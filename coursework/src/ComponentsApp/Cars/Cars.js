@@ -51,7 +51,7 @@ function Cars(props){
         ?
         setCopyCars(prev=> prev.filter(car=> car.brand === brand.value))
         :
-            setCopyCars(prev=> prev.filter(car=> car.brand === brand))
+        setCopyCars(prev=> prev.filter(car=> car.brand === brand))
     }
     return(
         <>
@@ -64,22 +64,50 @@ function Cars(props){
                 <button className={s.search} onClick={Search}>Search</button>
             </div>
             <div className={s.box}>
+                {/*{*/}
+                {/*    props.user.admin*/}
+                {/*        ?*/}
+                {/*        copyCars.map((car, key) =>*/}
+                {/*            <Post*/}
+                {/*            key={key}*/}
+                {/*            id={car.id}*/}
+                {/*            brand={car.brand}*/}
+                {/*            modal={car.modal}*/}
+                {/*            setBasket={props.setBasket}*/}
+                {/*            price={car.price}*/}
+                {/*            user={props.user}*/}
+                {/*            img={car.img}*/}
+                {/*            basket={props.basket}*/}
+                {/*        />)*/}
+                {/*        :*/}
+                {/*        copyCars.map((car, key) =>*/}
+                {/*            <PostForUser*/}
+                {/*            key={key}*/}
+                {/*            id={car.id}*/}
+                {/*            setBasket={props.setBasket}*/}
+                {/*            brand={car.brand}*/}
+                {/*            modal={car.modal}*/}
+                {/*            price={car.price}*/}
+                {/*            user={props.user}*/}
+                {/*            basket={props.basket}*/}
+                {/*        />)*/}
+
+                {/*}*/}
                 {
-                    props.user.admin
-                        ?
-                        copyCars.map((car, key) => <Post key={key} getCars={getCars} id={car.id} brand={car.brand} model={car.model} price={car.price}/>)
-                        :
-                        copyCars.map((car, key) => <PostForUser
+                    copyCars.map((car, key) =>
+                        <Post
+                            setUser = {props.setUser}
                             key={key}
                             id={car.id}
-                            setBasket={props.setBasket}
                             brand={car.brand}
                             model={car.model}
+                            setBasket={props.setBasket}
                             price={car.price}
                             user={props.user}
+                            img={car.img}
                             basket={props.basket}
+                            getCars={getCars}
                         />)
-
                 }
 
             </div>
