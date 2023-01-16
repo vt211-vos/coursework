@@ -1,0 +1,115 @@
+.mainBox{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+.box{
+    position: relative;
+    background: white;
+}
+.close{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    color: black;
+}
+.price{
+    padding: 10px;
+    border-radius: 10px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+.color{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.price img{
+    width: 30px;
+}
+.flex{
+    display: flex;
+}
+.img img{
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+input[type='radio']{
+    display: none;
+}
+input[type="radio"]:checked + .text{
+    color: #FB8F1D;
+    border-bottom: 2px solid #FB8F1D;
+}
+
+input[type="radio"]:checked + .color{
+    border: 3px solid #FB8F1D;
+    border-radius: 50%;
+    position: relative;
+
+}
+.box{
+    padding: 7px;
+    border-radius: 10px;
+
+}
+.icon img{
+    width: 25px;
+}
+
+.icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inputs label{
+    cursor: pointer;
+    margin: 10px;
+
+}
+.inputs{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.inpColor{
+    display: flex;
+    align-items: center;
+}
+.item{
+    padding: 10px;
+}
+.name{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.buy{
+    width: 100px;
+    font-size: 15px;
+    color: #fff;
+    border: 1px solid #FB8F1D;
+    background: #FB8F1D;
+    border-radius: 8px;
+    padding: 5px 20px;
+    margin: 0 4px;
+    margin-bottom: 10px;
+    transition-duration: 500ms;
+}
+.buy:hover{
+    color: #FB8F1D;
+    border: 1px solid #FB8F1D;
+    background: #fff;
+
+
+}
+.boxBuy{
+    display: flex;
+    justify-content: center;
+ }

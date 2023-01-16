@@ -1,0 +1,15 @@
+table{
+    margin-bottom: 20px;
+}
+.finish{
+    font-size: 15px;
+    color: #fff;
+    border: 1px solid #FB8F1D;
+    background: #FB8F1D;
+    border-radius: 8px;
+    padding: 5px 20px;
+    margin: 0 5px;
+}
+.boxBtn{
+    display: flex;
+}

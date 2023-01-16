@@ -7,6 +7,8 @@ import Modal from "../modal/modal";
 import Register from "../Register/Register";
 import Login from "../Login/Login";
 import FormCreate from "../CRUD/FormCreate/FormCreate";
+import comparison from './logo/comparison.png'
+
 
 function Header(props){
     const navigate = useNavigate()
@@ -47,8 +49,9 @@ function Header(props){
             </div>
 
             <div className={s.units}>
-                <div className={s.item}>
-                    <Link to='/aboutUs' >About Us</Link>
+
+                <div className={`${s.item} . ${s.comparison}`}>
+                    <Link to={'/comparison'}><img src={comparison}/></Link>
                 </div>
                 <div className={s.item}>
                     <Link to={'/cars'} >Cars</Link>
@@ -56,15 +59,21 @@ function Header(props){
                 {
                     props.user.admin
                         ?
-                        <div className={s.item}>
-                            <div onClick={()=>setModalLogin(true)}>+Add car</div>
-                            <Modal IsOpened={modalLogin}><FormCreate onClose = {CloseLogin}/></Modal>
+                        <>
+                            <div className={s.item}>
+                                <div onClick={()=>setModalLogin(true)}>+Add car</div>
+                                <Modal IsOpened={modalLogin}><FormCreate onClose = {CloseLogin}/></Modal>
+                            </div>
+                            <div className={s.item}>
+                                <Link to={'/orders'} >Замовлення</Link>
+                            </div>
+                        </>
 
-                        </div>
                         :
                         <div className={s.item}>
                             <Link to={'/basket'} >Basket</Link>
                         </div>
+
                 }
                 {   props.user.check
                     ?

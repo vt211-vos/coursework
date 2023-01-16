@@ -1,42 +1,82 @@
-*{
-    box-sizing: border-box;
-}
 .box{
-    margin: 5px 0;
-    border-radius: 20px;
-
-    display: flex;
     background: #fff;
+    border-radius: 10px;
+    margin: 0 10px;
+}
+
+
+.data{
+    padding: 10px 20px;
+}
+.icon{
+
+    width: 25px;
+}
+.item{
+    margin: 10px 0;
+    display: flex;
     justify-content: space-between;
-    align-items: center;
 }
-.img{
-    background-color: #756e6e;
-    width: 15%;
-    height: 80px;
-    border-radius: 20px 0 0 20px;
+.price{
+    border-radius: 10px;
+    border: 2px solid black;
+    justify-content: center;
 }
+
+.loadingImg{
+    width: 200px;
+    height: 120px;
+}
+.mainImg{
+    width: 200px;
+    height: 120px;
+}
+/**{*/
+/*    box-sizing: border-box;*/
+/*}*/
+/*.MainBox{*/
+/*    display: flex;*/
+/*    border: 2px solid black;*/
+/*    margin: 10px;*/
+/*}*/
+/*.box{*/
+
+/*    margin: 5px auto;*/
+/*    border-radius: 20px;*/
+/*    background: #fff;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*}*/
+/*.img{*/
+/*    background-color: #756e6e;*/
+/*    width: 200px;*/
+/*    height: 130px;*/
+/*    border-radius: 20px ;*/
+/*}*/
 
 .delete{
-
+    margin: 0 auto;
     font-size: 15px;
     color: #fa3030;
     border: 2px solid #fa3030;
     border-radius: 8px;
     background-color: transparent;
     padding: 10px 20px;
-    margin-right: 15px;
+
 }
-.count {
-    padding: 7px 5px;
-    margin: 0 2px;
-    border: 1px solid black;
-    border-radius: 5px;
-}
+/*.count {*/
+/*    padding: 7px 5px;*/
+/*    margin: 0 2px;*/
+/*    border: 1px solid black;*/
+/*    border-radius: 5px;*/
+/*}*/
 
 .countBox{
+    text-align: center;
     display: flex;
+    justify-content: center;
     align-items: center;
+    margin: 10px auto;
 }
 .btns div{
     padding: 0 7px;
@@ -58,4 +98,17 @@
     cursor: pointer;
     background: rgb(255, 114, 114);
     border-radius:0 0 5px 5px ;
+}
+/*.item{*/
+/*    text-align: center;*/
+/*    margin: 20px;*/
+/*}*/
+/*.flex{*/
+/*    margin: 0 auto;*/
+/*    display: flex;*/
+/*}*/
+.color{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
 }

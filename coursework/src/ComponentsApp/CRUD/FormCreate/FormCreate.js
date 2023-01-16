@@ -7,8 +7,26 @@ import addImage from './img/image-file-add.png'
 function FormCreate(props){
     const navigate = useNavigate()
     const [inputs, setInputs] = useState({})
+    const [images, setImages] = useState([])
+
     function handleChangeImg(e){
 
+        // const reader = new FileReader()
+        // reader.onload =()=>{
+        //     const name = e.target.name
+        //     const value = reader.result
+        //     let id = 0
+        //     console.log(images.length)
+        //     if(images.length > 0){
+        //         id = images[images.length-1].id + 1
+        //     }
+        //     setImages(prev => prev.concat({
+        //         id: id,
+        //         img: value
+        //     }))
+        //     console.log(images)
+        // }
+        // reader.readAsDataURL(e.target.files[0])
         const reader = new FileReader()
         reader.onload =()=>{
             const name = e.target.name
@@ -31,7 +49,6 @@ function FormCreate(props){
         axios.post("http://api/newCar", inputs).then(function (response) {
                 console.log(response.data)
             props.onClose()
-            navigate('/cars')
         })
 }
     return(
@@ -58,7 +75,22 @@ function FormCreate(props){
                         <input type="file" id='file' accept='image/*'  name='img' onChange={handleChangeImg}/>
                         <img src={addImage}/> Attach
                     </label>
+                    {/*<div className={s.imgs}>*/}
+                    {/*    {*/}
+                    {/*        images.map((item, index)=>*/}
+                    {/*            <div className={s.test} key={index}>*/}
+                    {/*                <img src={item.img}/>*/}
+                    {/*                <div*/}
+                    {/*                onClick={()=>{*/}
+                    {/*                    setImages(prev=>prev.filter(img => img.id !== itemЯ.id))*/}
+                    {/*                }}*/}
+                    {/*                >delete</div>*/}
+                    {/*            </div>)*/}
+                    {/*    }*/}
 
+                    {/*</div>*/}
+
+                    {/*<div onClick={()=>console.log(images)}>Show</div>*/}
                     <div className={s.btn}>
                         <button>Create</button>
                     </div>

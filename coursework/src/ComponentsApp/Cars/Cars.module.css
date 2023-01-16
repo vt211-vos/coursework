@@ -6,12 +6,11 @@
 .filter {
     text-align: center;
 }
-.boxSel{
-    display: flex;
-    justify-content: center;
-}
+
 .sel{
-    min-width: 400px;
+    margin: 0 auto;
+    min-width: 200px;
+    max-width: 400px;
 }
 .search{
     font-size: 15px;

@@ -14,6 +14,18 @@
     cursor: pointer;
     color: black;
 }
+.test img{
+    width: 100px;
+
+}
+.test {
+    text-align: center;
+}
+.imgs{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
 .box{
     position: relative;
     background: #fff;

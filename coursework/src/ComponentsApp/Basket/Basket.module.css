@@ -1,5 +1,5 @@
 .mainBox{
-    padding: 0 150px;
+    padding: 0 100px;
 }
 
 .buy{
@@ -32,4 +32,7 @@
     justify-content: space-between;
     padding: 10px 0;
     font-size: 20px;
+}
+.box{
+    display: flex;
 }

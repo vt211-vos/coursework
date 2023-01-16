@@ -57,6 +57,7 @@ function Login(props){
                                 name: response.data.name,
                                 email: response.data.email,
                                 password: response.data.password,
+                                phone: response.data.mobile,
                                 admin: true
                             })
                         }
@@ -64,6 +65,7 @@ function Login(props){
                             props.setUser({
                                 check: true,
                                 id: response.data.id,
+                                phone: response.data.mobile,
                                 name: response.data.name,
                                 email: response.data.email,
                                 password: response.data.password,

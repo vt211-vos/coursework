@@ -9,16 +9,25 @@
     height: 100%;
 }
 .box{
+    height: 800px;
+    overflow-y: scroll;
     position: relative;
     background: #fff;
-    padding: 50px 100px 100px 100px;
+    padding: 50px 50px 100px 50px;
     border-radius: 10px;
     box-shadow: #FF7F00 5px 5px 5px;
+}
+.box::-webkit-scrollbar{
+    width: 0;
+    background: transparent;
 }
 .close{
     position: absolute;
     right: 20px;
     top: 20px;
+}
+.colors{
+    display: flex;
 }
 .title{
     margin-bottom: 90px;
@@ -39,7 +48,7 @@
 .input{
     font-size: 15px;
     height: 40px;
-    width: 100%;
+    width: 300px;
     border: 1px solid #6C6A6A;
     border-radius: 13px;
     padding: 0px 5px;
@@ -69,8 +78,20 @@
 
 .customFileUpload input[type="file"]{
     display: none;
+
 }
 .customFileUpload img{
     height: 30px;
 }
-
+.customFileUpload{
+    width: 300px;
+    margin: 0 auto;
+}
+.imgs img{
+    width: 200px;
+}
+.imgs{
+    max-width: 420px;
+    display: flex;
+    flex-wrap: wrap;
+}

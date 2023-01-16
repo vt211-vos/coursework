@@ -39,10 +39,7 @@
     color: #FB8F1D;
     border: 1px solid #FB8F1D;
     background: #fff;
-    border-radius: 8px;
-    padding: 5px 20px;
-    margin: 0 4px;
-    margin-bottom: 10px;
+
 
 }
 .img{
@@ -53,6 +50,13 @@
     align-items: center;
 
 
+}
+.buyBox{
+    display: flex;
+    margin-bottom: 10px;
+}
+.comparison{
+    width: 30px;
 }
 .item{
     padding: 5px 0;

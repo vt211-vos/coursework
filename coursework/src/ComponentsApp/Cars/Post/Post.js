@@ -4,11 +4,12 @@ import axios from "axios";
 import {Link} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {FaStar} from "react-icons/fa";
-import {useNavigate} from "react-router-dom";
 import FormUpdate from "../../CRUD/FormUpdate/FormUpdate";
 import Modal from "../../modal/modal";
-import FormCreate from "../../CRUD/FormCreate/FormCreate";
 import Login from "../../Login/Login";
+import ConfigOrder from "../../ConfigOrder/ConfigOrder";
+import comparison from "./img/comparison.png"
+
 
 const colors = {
     orange: "#FFBA5A",
@@ -17,10 +18,7 @@ const colors = {
 
 function Post(props){
 
-    const [modalLogin, setModalLogin] = useState(false)
-    const CloseLogin = () =>{
-        setModalLogin(false)
-    }
+
     const [currentValue, setCurrentValue] = useState();
     const [hoverValue, setHoverValue] = useState(undefined);
     const stars = Array(5).fill(0)
@@ -28,7 +26,7 @@ function Post(props){
     const [img, setImg] =useState()
     useEffect(()=>{
         getStars()
-    },[])
+    })
 
     function getStars(){
         axios.post("http://api/car/rating", props.id).then(function (response) {
@@ -50,7 +48,10 @@ function Post(props){
             }
 
         })
-        axios.post('http://api/car/img', props.id).then(function (response){
+        getMainImg()
+    }
+    function getMainImg(){
+        axios.post('http://api/car/MainImg', props.id).then(function (response){
             setImg(response.data.img)
         })
     }
@@ -91,26 +92,42 @@ function Post(props){
         setHoverValue(undefined)
     }
     function AddToBasket() {
-        let id = 0
-        console.log(props.basket.length)
-        if(props.basket.length > 0){
-            id = props.basket[props.basket.length-1].id + 1
-        }
-        props.setBasket(prev => prev.concat({
-            brand: props.brand,
-            model: props.model,
-            price: props.price,
-            id: id,
-            count: 1,
-            idCar: props.id
-        }))
+        setModalBuy(true)
+        // let id = 0
+        // console.log(props.basket.length)
+        // if(props.basket.length > 0){
+        //     id = props.basket[props.basket.length-1].id + 1
+        // }
+        // props.setBasket(prev => prev.concat({
+        //     brand: props.brand,
+        //     model: props.model,
+        //     price: props.price,
+        //     id: id,
+        //     count: 1,
+        //     idCar: props.id
+        // }))
 
     }
+    function AddToComparison(){
+
+        if(!props.comparison.includes(+props.id))
+         props.setComparison(prev=>prev.concat(props.id))
+    }
+
     /////////////modal////////////
     const [modal, setModal] = useState(false)
     const CloseModal = () =>{
         setModal(false)
     }
+    const [modalBuy, setModalBuy] = useState(false)
+    const CloseModalBuy = () =>{
+        setModalBuy(false)
+    }
+    const [modalLogin, setModalLogin] = useState(false)
+    const CloseLogin = () =>{
+        setModalLogin(false)
+    }
+
     return(
         <div className={s.post}>
             <div className={s.img}>
@@ -142,17 +159,19 @@ function Post(props){
                         <>
                         {/*<Link to={`/car/${props.id}/edit`} className={s.update}>Update</Link>*/}
                             <div className={s.update} onClick={()=>setModal(true)}>Update</div>
-                            <Modal IsOpened={modal}><FormUpdate id = {props.id} onClose = {CloseModal}/></Modal>
+                            <Modal IsOpened={modal}><FormUpdate getMainImg={getMainImg} id = {props.id}  onClose = {CloseModal}/></Modal>
                             <button className={s.delete} onClick={Delete}>Delete</button>
                         </>
                     :
                         <div className={s.buyBox}>
                             <button className={s.buy} onClick={AddToBasket}>Buy</button>
+                            <img src={comparison} onClick={AddToComparison} className={s.comparison}/>
                         </div>
                 }
 
 
             </div>
+            <div onClick={()=>console.log(props.comparison)}>Show</div>
             <div style={styles.container}>
                 <div style={styles.star}>
                     {stars.map((_, index) => {
@@ -177,7 +196,8 @@ function Post(props){
                         )
                     })}
                 </div>
-                <Modal IsOpened={modalLogin}><Login setUser = {props.setUser} onClose = {CloseLogin}/></Modal>
+                <Modal IsOpened={modalLogin}><Login setUser = {props.setUser} onClose = {CloseLogin} /></Modal>
+                <Modal IsOpened={modalBuy}><ConfigOrder basket = {props.basket} setBasket={props.setBasket} id = {props.id} img = {img} price = {props.price} brand = {props.brand} model={props.model}  onClose = {CloseModalBuy}/></Modal>
                 <div className={s.feedback}>
                     <div>Кільсіть відгуків:{feedback.responses}</div>
                     <div>Середня оцнка:{feedback.stars}</div>

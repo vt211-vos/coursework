@@ -75,6 +75,10 @@
 .authorization{
     display: flex;
 }
+.comparison img{
+    width: 30px;
+}
+
 
 @media screen and (max-width:950px) {
 
@@ -89,5 +93,7 @@
     .authorization{
         display: block;
     }
-
+    .box{
+        padding: 10px 20px;
+    }
 }

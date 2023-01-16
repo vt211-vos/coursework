@@ -4,15 +4,11 @@ import Footer from "./ComponentsApp/Footer/Footer";
 import {useEffect, useState} from "react";
 import Login from "./ComponentsApp/Login/Login";
 import {Route, Routes} from "react-router-dom";
-import AboutUs from "./ComponentsApp/AboutUs/AboutUs";
-import Register from "./ComponentsApp/Register/Register";
-import Cabinet from "./ComponentsApp/Cabinet/Cabinet";
-import FormCreate from "./ComponentsApp/CRUD/FormCreate/FormCreate";
 import Cars from "./ComponentsApp/Cars/Cars";
-import FormUpdate from "./ComponentsApp/CRUD/FormUpdate/FormUpdate";
 import Basket from "./ComponentsApp/Basket/Basket";
 import ProductPage from "./ComponentsApp/productPage/productPage";
-import Test from "./ComponentsApp/test/test";
+import Comparison from "./ComponentsApp/Сomparison/Comparison";
+import Orders from "./ComponentsApp/Orders/Orders";
 
 
 function App(props) {
@@ -22,12 +18,17 @@ function App(props) {
     }
     const [user, setUser] = useState(User)
     const [basket, setBasket] = useState([])
+    const [comparison, setComparison] = useState([])
+
     useEffect(()=>{
         if(localStorage.getItem('UserData')){
             setUser(JSON.parse(localStorage.getItem('UserData')))
         }
         if(localStorage.getItem('Basket')){
             setBasket(JSON.parse(localStorage.getItem('Basket')))
+        }
+        if(localStorage.getItem('Comparison')){
+            setComparison(JSON.parse(localStorage.getItem('Comparison')))
         }
     },[])
     //run every time our pet state changes
@@ -37,6 +38,9 @@ function App(props) {
     useEffect(()=>{
         localStorage.setItem("Basket",JSON.stringify(basket))
     },[basket])
+    useEffect(()=>{
+        localStorage.setItem("Comparison",JSON.stringify(comparison))
+    },[comparison])
   return (
       <>
           <div className={s.box}>
@@ -57,6 +61,8 @@ function App(props) {
                         {/*<Route  path='/crud' element={<FormCreate/>}/>*/}
                         <Route  path='/cars' element={
                             <Cars
+                            setComparison = {setComparison}
+                            comparison = {comparison}
                             user={user}
                             basket={basket}
                             setBasket={setBasket}
@@ -69,8 +75,9 @@ function App(props) {
                             user={user}
                             setUser={setUser}
                         />}/>
-                        <Route path='/productPage/:id' element={<ProductPage/>}/>
-                        <Route path='/test' element={<Test/>}/>
+                        <Route path='/productPage/:id' element={<ProductPage user={user} basket = {basket} setBasket = {setBasket}/>}/>
+                        <Route path='/comparison' element={<Comparison setComparison = {setComparison} comparison = {comparison}/>}/>
+                        <Route path='/orders' element={<Orders/>}/>
                     </Routes>
                  </div>
               <Footer/>

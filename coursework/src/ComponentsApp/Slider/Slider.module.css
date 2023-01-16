@@ -1,0 +1,24 @@
+.photo{
+    width: 100%;
+}
+.main_container{
+    height: 500px;
+    display: flex;
+    align-items: center;
+
+}
+.window{
+    width: 100%;
+    overflow: hidden;
+}
+.all_items_container{
+    display: flex;
+    transition: translate;
+    transition-property: transform;
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+}
+.arrow{
+    cursor: pointer;
+    width: 40px;
+}

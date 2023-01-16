@@ -4,16 +4,29 @@ import {useNavigate} from "react-router-dom";
 import {useEffect, useState} from "react";
 import Login from "../Login/Login";
 import Modal from "../modal/modal";
+import axios from "axios";
 
 function Basket(props){
+    const [order, setOrder] = useState()
+
+    useEffect(()=>{
+        setOrder({
+            user: props.user,
+            cars: props.basket
+        })
+    }, [])
     const [modalLogin, setModalLogin] = useState(false)
     const CloseLogin = () =>{
         setModalLogin(false)
     }
     const [totalPrice, setTotalPrice] = useState(CountTotalPrice)
     function Buy(){
-        if(props.user.check)
-            props.setBasket([])
+        if(props.user.check){
+            axios.post('http://api/test', order).then(function (response){
+                console.log(response.data)
+            })
+            props.setBasket([]);
+        }
         else
             setModalLogin(true)
     }
@@ -39,7 +52,9 @@ function Basket(props){
                         brand={item.brand}
                         model={item.model}
                         price={item.price}
+                        IDCar = {item.idCar}
                         id={item.id}
+                        data={item.data}
                         count ={item.count}
                         setBasket={props.setBasket}
                         totalProce = {totalPrice}
@@ -67,7 +82,7 @@ function Basket(props){
                     </div>
                     }
                 </div>
-
+                <div onClick={()=>console.log(order)}>show</div>
 
 
         </div>
